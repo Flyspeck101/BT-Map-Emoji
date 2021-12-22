@@ -22,7 +22,7 @@
     checkboxesContainer.innerHTML += i % 8 == 0 ? "<br>" : "";
     checkboxesContainer.innerHTML += `<input type="checkbox" id="${i}">`;
     let checkbox = document.getElementById(`${i}`);
-    checkbox.addEventListener("click", () => {
+    checkbox.addEventListener("onclick", () => {
       map[Math.floor(i / 8)][i % 8] = checkbox.checked;
       document.getElementById("output").innerHTML = "";
       for (let j = 0; j < 64; j++) {
