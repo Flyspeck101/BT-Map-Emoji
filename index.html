@@ -24,15 +24,14 @@
     checkboxesContainer.innerHTML += `<input type="checkbox" id="${i}">`;
     let checkbox = document.getElementById("button");
     function abcde() {
-      map[Math.floor(i / 8)][i % 8] = checkbox.checked;
       console.clear();
       let thing = "";
       document.getElementById("output").innerHTML = "";
       for (let j = 0; j < 64; j++) {
         document.getElementById("output").innerHTML += j % 8 == 0 ? "\n" : "";
         thing += j % 8 == 0 ? "\n" : "";
-        document.getElementById("output").innerHTML += map[Math.floor(j / 8)][j % 8] ? ":rock:" : ":blue_square:";
-        thing += map[Math.floor(j / 8)][j % 8] ? ":rock:" : ":blue_square:";
+        document.getElementById("output").innerHTML += document.getElementById(j).checked ? ":rock:" : ":blue_square:";
+        thing += document.getElementById(j).checked ? ":rock:" : ":blue_square:";
       }
       console.log(thing);
     }
