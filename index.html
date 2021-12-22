@@ -5,6 +5,7 @@
 <body>
 <div id="checkboxes">
 </div>
+  <button id="button">Generate</button>
 <pre id="output"></pre>
 <script>
   let checkboxesContainer = document.getElementById("checkboxes");
@@ -21,8 +22,8 @@
   for (let i = 0; i < 64; i++) {
     checkboxesContainer.innerHTML += i % 8 == 0 ? "<br>" : "";
     checkboxesContainer.innerHTML += `<input type="checkbox" id="${i}">`;
-    let checkbox = document.getElementById(`${i}`);
-    checkbox.addEventListener("oninput", () => {
+    let checkbox = document.getElementById("button");
+    checkbox.addEventListener("onclick", () => {
       map[Math.floor(i / 8)][i % 8] = checkbox.checked;
       console.clear();
       let thing = "";
