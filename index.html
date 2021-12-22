@@ -19,6 +19,7 @@
     [false, false, false, false, false, false, false, false]
   ];
   for (let i = 0; i < 64; i++) {
+    checkboxesContainer.innerHTML += i % 8 == 0 ? "\n" : "";
     checkboxesContainer.innerHTML += `<input type="checkbox" id="${i}">`;
     let checkbox = document.getElementById(`${i}`);
     checkbox.addEventListener("click", () => {
