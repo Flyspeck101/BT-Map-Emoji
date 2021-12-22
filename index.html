@@ -5,7 +5,7 @@
 <body>
 <div id="checkboxes">
 </div>
-  <button id="button">Generate</button>
+  <button id="button" onclick="abcde()">Generate</button>
 <pre id="output"></pre>
 <script>
   let checkboxesContainer = document.getElementById("checkboxes");
@@ -23,7 +23,7 @@
     checkboxesContainer.innerHTML += i % 8 == 0 ? "<br>" : "";
     checkboxesContainer.innerHTML += `<input type="checkbox" id="${i}">`;
     let checkbox = document.getElementById("button");
-    checkbox.addEventListener("onclick", () => {
+    function abcde() {
       map[Math.floor(i / 8)][i % 8] = checkbox.checked;
       console.clear();
       let thing = "";
@@ -35,7 +35,7 @@
         thing += map[Math.floor(j / 8)][j % 8] ? ":rock:" : ":blue_square:";
       }
       console.log(thing);
-    });
+    }
   }
 </script>
 </body>
