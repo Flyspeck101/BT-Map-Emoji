@@ -4,9 +4,32 @@
 </head>
 <body>
 <div id="checkboxes">
-<input type="checkbox" id="1">
 </div>
 <pre id="output"></pre>
 <script>
+  let checkboxesContatiner = document.getElementById("checkboxes");
+  let map = [
+    [false, false, false, false, false, false, false, false],
+    [false, false, false, false, false, false, false, false],
+    [false, false, false, false, false, false, false, false],
+    [false, false, false, false, false, false, false, false],
+    [false, false, false, false, false, false, false, false],
+    [false, false, false, false, false, false, false, false],
+    [false, false, false, false, false, false, false, false],
+    [false, false, false, false, false, false, false, false]
+  ];
+  for (let i = 0; i < 64; i++) {
+    checkboxesContainer.innerHTML += `<input type="checkbox" id="${i}">`;
+    let checkbox = document.getElementById(`${i}`);
+    checkbox.addEventListener("click", () => {
+      map[Math.floor(i / 8)][i % 8] = checkbox.checked;
+      document.getElementById("output").innerHTML = "";
+      for (let j = 0; j < 64; j++) {
+        document.getElementById("output").innerHTML += j % 8 == 0 ? "\n" : "";
+        document.getElementById("output").innerHTML += map[Math.floor(j / 8)][j % 8] ? ":rock:" : ":blue_square:";
+      }
+    });
+  }
 </script>
 </body>
+</html>
